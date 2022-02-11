@@ -20,5 +20,4 @@ email to the user the crontab file belongs to (unless redirected).
 For more information see the manual pages of crontab(5) and cron(8)
 ----
 
-m h  dom mon dow   command
 0 0 */3 * * /bin/bash /home/homebridge/hbp-updater.sh > /var/lib/homebridge/homebridge_updater.log
