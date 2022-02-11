@@ -19,9 +19,10 @@ while IFS= read -r plugin;do
   sudo -E -n npm install -g $plugin@latest;
 done < $PLUGIN_LIST
 
+echo -en 'All the plugins that were last updated: '\n && cat $PLUGIN_LIST > /var/lib/homebridge/homebridge_updater.log
+
 #restart the hb service
 hb-service restart
 
 #Cleanup
-echo -en 'All the plugins that were last updated: '\n && cat $PLUGIN_LIST > /var/lib/homebridge/homebridge.log
 rm -f $PLUGIN_LIST
